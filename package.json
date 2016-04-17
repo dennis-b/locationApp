@@ -38,7 +38,6 @@
     "lodash": "^4.0.0",
     "moment": "2.10.3",
     "ng-cordova": "^0.1.26-alpha"
-
   },
   "devDependencies": {
     "autoprefixer": "^6.3.5",
@@ -90,7 +89,8 @@
     "cordova-plugin-x-socialsharing@5.0.12",
     "ionic-plugin-keyboard@2.0.1",
     "cordova-plugin-geolocation",
-    "cordova-plugin-vibration"
+    "cordova-plugin-vibration",
+    "cordova-plugin-file"
   ],
   "cordovaPlatforms": [
     "android"

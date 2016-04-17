@@ -2,6 +2,7 @@ import template from './category.html';
 import {RouteConfig} from 'annotations/route-decorator';
 import {Inject, Service} from 'annotations/ng-decorator';
 import BasePage from "../../../common/base/base-page";
+import AppUtils from "../../../core/utils/app-utils";
 
 @RouteConfig('tab.category', {
     url: '/category',
@@ -12,11 +13,11 @@ import BasePage from "../../../common/base/base-page";
     }
 })
 
-@Inject('localStorageService')
+@Inject('localStorageService', '$cordovaFile')
 //
 class CategoryState extends BasePage {
-    constructor(localStorageService) {
-        super(localStorageService);
+    constructor(localStorageService, $cordovaFile) {
+        super(localStorageService, $cordovaFile);
         this.showDelete = false;
         this.listCanSwipe = true;
         this.categories = localStorageService.get('categories');
@@ -29,6 +30,11 @@ class CategoryState extends BasePage {
 
     onAdd() {
         this.goToAddCategory();
+
+    }
+
+    onShare() {
+        AppUtils.onShareCategories();
     }
 
     onEdit(id) {

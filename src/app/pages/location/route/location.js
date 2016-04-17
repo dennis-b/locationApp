@@ -3,6 +3,7 @@ import {RouteConfig} from 'annotations/route-decorator';
 import {Inject, Service} from 'annotations/ng-decorator';
 import BasePage from "../../../common/base/base-page";
 import CacheManager from "../../../core/utils/CacheManager";
+import AppUtils from "../../../core/utils/app-utils";
 
 
 @RouteConfig('tab.location', {
@@ -108,6 +109,10 @@ class LocationState extends BasePage {
             this.categoryName = item.category.name;
             return true;
         }
+    }
+
+    onShare() {
+        AppUtils.onShareLocations();
     }
 
 }

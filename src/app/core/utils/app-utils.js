@@ -49,11 +49,40 @@ class AppUtils {
         AppUtils.getService('$ionicLoading').hide();
     }
 
-    onShareEmail() {
+    static onShareCategories() {
+
+        var localStorageService = AppUtils.getService('localStorageService');
+        var $cordovaFile = AppUtils.getService('$cordovaFile');
+        var categories = localStorageService.get('categories');
+
+        $cordovaFile.writeFile(cordova.file.externalRootDirectory, "categories.json", JSON.stringify(categories), true)
+            .then(function (success) {
+                var files = [cordova.file.externalRootDirectory + "categories.json"];
+                AppUtils.shareEmail("Categories", files);
+            }, function (error) {
+                console.log(error)
+            });
+    }
+
+    static onShareLocations() {
+        var localStorageService = AppUtils.getService('localStorageService');
+        var $cordovaFile = AppUtils.getService('$cordovaFile');
+        var locations = localStorageService.get('locations');
+
+        $cordovaFile.writeFile(cordova.file.externalRootDirectory, "locations.json", JSON.stringify(locations), true)
+            .then(function (success) {
+                var files = [cordova.file.externalRootDirectory + "locations.json"];
+                AppUtils.shareEmail("Locations", files);
+            }, function (error) {
+                console.log(error)
+            });
+    }
+
+
+    static shareEmail(title, files) {
         AppUtils.showLoader();
-        var fileArr = [this.shareDataImage];
         var $cordovaSocialSharing = AppUtils.getService('$cordovaSocialSharing');
-        this.$cordovaSocialSharing.shareViaEmail("", "Locations", [], null, null, fileArr).then(function (res) {
+        $cordovaSocialSharing.shareViaEmail("", title, [], null, null, files).then(function (res) {
             AppUtils.hideLoader();
         }, function (err) {
             AppUtils.hideLoader();
