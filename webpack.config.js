@@ -32,7 +32,7 @@ module.exports = {
                 exclude: [/app\/parse/, /app\/lib/, /jspm_packages/, /.tmp/, /build/, /gulp/, /node_modules/, /bower_components/, /bld/],
                 loader: ['babel-loader'],
                 query: {
-                    plugins: ['transform-decorators-legacy', 'transform-object-assign'],
+                    plugins: ['transform-decorators-legacy', 'transform-object-assign','babel-plugin-transform-es2015-literals'],
                     presets: ['es2015', 'stage-0']
                 }
             },
