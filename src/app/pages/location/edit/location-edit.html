@@ -1,0 +1,56 @@
+<ion-view view-title="Update Location">
+
+    <ion-content class="padding">
+        <form class="add-form" name="loginForm" novalidate="novalidate" ng-submit="vm.onUpdate();">
+            <div class="list">
+                <label class="item item-input item-floating-label form-item">
+                    <span class="input-label">Location name</span>
+                    <input ng-model="vm.location.name" required type="text" placeholder="name">
+                </label>
+
+                <label class="item item-input item-floating-label form-item">
+                    <span class="input-label">Address</span>
+                    <input ng-model="vm.location.address" required type="text" placeholder="address">
+                </label>
+
+                <label class="item item-input-inset form-item">
+                    <div class="item-input-wrapper form-item row">
+                        <input ng-model="vm.location.coordinates.latitude"
+                               required
+                               class="col"
+                               type="text"
+                               placeholder="latitude">
+
+                        <input ng-model="vm.location.coordinates.longitude"
+                               required
+                               class="col"
+                               type="text"
+                               placeholder="longitude">
+                    </div>
+
+                </label>
+
+
+                <label class="item item-input item-floating-label form-item">
+                    <span class="input-label">Category</span>
+                    <select ng-model="vm.location.category"
+                            style="width: 95%;padding: 0;margin: 0;border: none;background: transparent;"
+                            required
+                            ng-options="category.name for category in vm.categories track by category.id">
+                        <option value="">Select category</option>
+                    </select>
+                    <input type="hidden" ng-model="vm.location.category" required>
+                </label>
+
+
+            </div>
+
+            <div class="padding">
+                <button type="submit" class="button button-block button-positive">Update</button>
+            </div>
+
+        </form>
+
+
+    </ion-content>
+</ion-view>

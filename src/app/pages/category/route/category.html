@@ -1,0 +1,40 @@
+<ion-view view-title="Category" hide-back-button="true">
+
+    <ion-nav-buttons side="left">
+        <div class="buttons">
+            <button class="button button-icon icon ion-ios-minus-outline"
+                    ng-click="vm.showDelete = !vm.showDelete;"></button>
+        </div>
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="right">
+        <div class="buttons">
+            <button class="button button-icon icon ion-ios-plus-outline" ng-click="vm.onAdd()"></button>
+        </div>
+    </ion-nav-buttons>
+
+    <ion-content class="padding">
+
+        <ion-list ng-if='vm.categories.length > 0'
+                  show-delete="vm.showDelete"
+                  can-swipe="vm.listCanSwipe">
+            <ion-item ng-repeat="item in vm.categories track by $index"
+                      ng-click="vm.onEdit(item.id)"
+                      class="item-remove-animate item-avatar item-icon-right">
+
+                <img src="assets/img/category.png" class="category-img"/>
+                <h2 class="text-center" style="margin-top: 5%">{{item.name}}</h2>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+                <ion-option-button class="button-assertive" ng-click="vm.onEdit(item.id)">
+                    Edit
+                </ion-option-button>
+                <ion-delete-button class="ion-minus-circled"
+                                   ng-click="vm.onDelete($index)">
+                </ion-delete-button>
+            </ion-item>
+        </ion-list>
+
+        <no-data ng-if='vm.categories.length == 0'></no-data>
+
+    </ion-content>
+</ion-view>

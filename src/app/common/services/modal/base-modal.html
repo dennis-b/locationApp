@@ -1,0 +1,30 @@
+<ion-modal-view class="ion-nifty-modal lag-base-modal">
+
+    <ion-header-bar>
+        <h1 class="title">{{data.title}}</h1>
+        <button class="button button-clear button-primary" ng-click="modal.hide();modal.remove();"
+                ng-if="data.showCancel">
+            <i class="ion-close-round close-modal-icon"></i>
+        </button>
+    </ion-header-bar>
+
+
+    <ion-content scroll="false">
+        <lmap conf="data.bind" style='width: 100%;height: 100%'></lmap>
+    </ion-content>
+
+    <ion-footer-bar align-title="center">
+
+        <div class="buttons">
+            <button type="button" ng-click="data.okCallback()" class="ok-modal button button-positive">{{data.okText}}
+            </button>
+        </div>
+        <h1 class="title">Update</h1>
+        <div class="buttons">
+            <button type="button" ng-click="data.cancelCallback()" class="ok-modal button button-assertive">
+                {{data.cancelText}}
+            </button>
+        </div>
+
+
+</ion-modal-view>

@@ -1,0 +1,94 @@
+<ion-popover-view class="lag-menu">
+    <ion-list>
+        <ion-item ng-click="vm.onSubMenuClick('personal')" ng-class="{'open-menu':vm.subMenu.personal}">
+            <span class="menu-icon">
+                <img src="assets/img/icons/menu/icn_user_female.svg" width="24"/>
+            </span>
+            <span class="menu-text" translate>MENU.PERSONAL</span>
+            <i class="ion-chevron-right menu-open-icon"></i>
+        </ion-item>
+
+        <div class="sub-menu" ng-slide-down="vm.subMenu.personal" duration="0.5">
+            <ion-item ng-click="vm.onSignOut()" class="sub-menu-item">
+                <span class="menu-icon">
+                    <img src="assets/img/icons/menu/icn_signout.svg" width="20"/>
+                </span>
+                <span class="menu-text" translate>MENU.SIGN_OUT</span>
+            </ion-item>
+
+            <ion-item ng-click="vm.goToUpdate()" class="sub-menu-item">
+                <span class="menu-icon">
+                    <img src="assets/img/icons/menu/icn_edit_profile.svg" width="20"/>
+                </span>
+                <span class="menu-text" translate>MENU.UPDATE</span>
+            </ion-item>
+        </div>
+        <!--------------------------------------------------------------------------------------------------------------------->
+        <ion-item ng-click="vm.goToMeasure()">
+            <span class="menu-icon">
+                <img src="assets/img/icons/menu/icn_measure.svg" width="24"/>
+            </span>
+            <span class="menu-text" translate>MENU.MEASURE</span>
+        </ion-item>
+        <!--------------------------------------------------------------------------------------------------------------------->
+        <ion-item ng-click="vm.goToCatalog()">
+            <span class="menu-icon">
+                <img src="assets/img/icons/menu/icn_search.svg" width="24"/>
+            </span>
+            <span class="menu-text" translate>MENU.SEARCH</span>
+        </ion-item>
+        <!--------------------------------------------------------------------------------------------------------------------->
+        <ion-item ng-click="vm.goToProgress()">
+            <span class="menu-icon">
+                <img src="assets/img/icons/menu/icn_progress.svg" width="24"/>
+            </span>
+            <span class="menu-text" translate>MENU.PROGRESS</span>
+        </ion-item>
+        <!--------------------------------------------------------------------------------------------------------------------->
+        <ion-item ng-click="vm.goToIntro()">
+            <span class="menu-icon">
+                <img src="assets/img/icons/menu/icn_how.svg" width="24"/>
+            </span>
+            <span class="menu-text" translate>MENU.HOWTO</span>
+        </ion-item>
+        <!--------------------------------------------------------------------------------------------------------------------->
+
+        <!--<ion-item ng-click="vm.onSubMenuClick('howto')" ng-class="{'open-menu':vm.subMenu.howto}">-->
+        <!--<span class="menu-icon">-->
+        <!--<img src="assets/img/icons/menu/icn_how.svg" width="24"/>-->
+        <!--</span>-->
+        <!--<span class="menu-text" translate>MENU.HOWTO</span>-->
+        <!--<i class="ion-chevron-right menu-open-icon"></i>-->
+        <!--</ion-item>-->
+
+        <!--<div class="sub-menu" ng-slide-down="vm.subMenu.howto" duration="0.5">-->
+        <!--<ion-item ng-click="vm.goToHowToMeasure()" class="sub-menu-item">-->
+        <!--<span class="menu-icon">-->
+        <!--<img src="assets/img/icons/menu/icn_measure.svg" width="20"/>-->
+        <!--</span>-->
+        <!--<span class="menu-text" translate>MENU.MEASURE</span>-->
+        <!--</ion-item>-->
+        <!--<ion-item ng-click="vm.goToHowToMeasure() " class="sub-menu-item">-->
+        <!--<span class="menu-icon">-->
+        <!--<img src="assets/img/icons/menu/icn_search.svg" width="20"/>-->
+        <!--</span>-->
+        <!--<span class="menu-text" translate>MENU.SEARCH</span>-->
+        <!--</ion-item>-->
+        <!--<ion-item ng-click="vm.goToHowToMeasure()" class="sub-menu-item">-->
+        <!--<span class="menu-icon">-->
+        <!--<img src="assets/img/icons/menu/icn_progress.svg" width="20"/>-->
+        <!--</span>-->
+        <!--<span class="menu-text" translate>MENU.PROGRESS</span>-->
+        <!--</ion-item>-->
+        <!--</div>-->
+
+        <!--------------------------------------------------------------------------------------------------------------------->
+        <ion-item ng-click="vm.goToAbout()">
+            <span class="menu-icon">
+                <img src="assets/img/icons/menu/icn_about.svg" width="24"/>
+            </span>
+            <span class="menu-text" translate>MENU.ABOUT</span>
+        </ion-item>
+
+    </ion-list>
+</ion-popover-view>

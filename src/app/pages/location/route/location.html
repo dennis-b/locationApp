@@ -1,0 +1,74 @@
+<ion-view view-title="Location" hide-back-button="true">
+
+    <ion-nav-buttons side="left">
+        <div class="buttons">
+            <button class="button button-icon icon ion-ios-minus-outline"
+                    ng-click="vm.showDelete = !vm.showDelete;"></button>
+        </div>
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="right">
+        <div class="buttons">
+            <button class="button button-icon icon ion-ios-plus-outline" ng-click="vm.onAdd()"></button>
+        </div>
+    </ion-nav-buttons>
+
+    <ion-header-bar class="bar-light bar-subheader searchbar">
+        <div class="row">
+            <div class="col-33" style="border-right: solid 2px;">
+                <ion-checkbox ng-model="vm.isSort" ng-change="vm.onSort();">Sort</ion-checkbox>
+            </div>
+            <div class="col-33" style="border-right: solid 2px;">
+                <label class="item" style="padding-left: 5px; padding-right: 5px;">
+                    <select ng-model="vm.searchQuery"
+                            style="width:100%;padding: 0;margin: 0;border: none;background: transparent;"
+                            required
+                            ng-options="category.name for category in vm.categories">
+                        <option value="">Filter</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="col-33">
+                <ion-checkbox ng-model="vm.isGroup" ng-change="vm.onGroup();">Group</ion-checkbox>
+            </div>
+
+        </div>
+    </ion-header-bar>
+
+
+    <ion-content class="padding">
+
+        <ion-list ng-if='vm.locations.length > 0'
+                  show-delete="vm.showDelete"
+                  can-swipe="vm.listCanSwipe">
+
+
+            <div ng-repeat="item in vm.locations | categoryf:vm.searchQuery  track by $index">
+
+                <div class="item item-divider divider" ng-if="vm.showGroup(item)">
+                    {{item.category.name}}
+                </div>
+
+                <ion-item ng-click="vm.onEdit(item.id)" class="item-remove-animate item-avatar item-icon-right">
+                    <img src="assets/img/location.jpg"/>
+                    <h2 class="text-center">{{item.name}}</h2>
+                    <p>{{item.address}}</p>
+                    <p>category : {{item.category.name}}</p>
+                    <i class="icon ion-chevron-right icon-accessory"></i>
+                    <ion-option-button class="button-assertive" ng-click="vm.onEdit(item.id)">
+                        Edit
+                    </ion-option-button>
+                    <ion-delete-button class="ion-minus-circled" ng-click="vm.onDelete($index)">
+                    </ion-delete-button>
+                </ion-item>
+
+            </div>
+
+
+        </ion-list>
+
+        <no-data ng-if='vm.locations.length == 0'></no-data>
+
+    </ion-content>
+</ion-view>

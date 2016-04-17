@@ -1,0 +1,10 @@
+{
+  "presets": ["es2015", "stage-0"],
+  "plugins": [
+    "transform-decorators-legacy",
+    "angular2-annotations",
+    "transform-object-assign",
+    "transform-class-properties",
+    "transform-flow-strip-types"
+  ]
+}

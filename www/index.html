@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, height=device-height, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src * 'self'; img-src * 'self' data: ; style-src * 'self' 'unsafe-inline'; script-src * 'unsafe-eval'; ">
+
+    <meta name="description" content="">
+    <link type="text/css" rel="stylesheet" href="./assets/style/ionic.css">
+</head>
+<body class="loc-app">
+
+
+<ion-nav-bar class="bar-positive">
+    <ion-nav-back-button class="button-icon ion-arrow-left-c">
+    </ion-nav-back-button>
+</ion-nav-bar>
+<ion-nav-view animation="slide-left-right"></ion-nav-view>
+
+<script src="cordova.js"></script>
+<script type="text/javascript" src='http://maps.google.com/maps/api/js?sensor=false&libraries=places'></script>
+<script src="./out/main.bundle.js"></script>
+</body>
+
+</html>
