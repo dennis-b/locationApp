@@ -13,7 +13,6 @@ var OccurenceOrderPlugin = require('webpack/lib/optimize/OccurenceOrderPlugin');
 var DedupePlugin = require('webpack/lib/optimize/DedupePlugin');
 var UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 var WebpackMd5Hash = require('webpack-md5-hash');
-var CompressionPlugin = require('compression-webpack-plugin');
 var precss = require('precss');
 var autoprefixer = require('autoprefixer');
 
