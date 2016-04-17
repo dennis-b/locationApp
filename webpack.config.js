@@ -32,7 +32,7 @@ module.exports = {
                 exclude: [/app\/parse/, /app\/lib/, /jspm_packages/, /.tmp/, /build/, /gulp/, /node_modules/, /bower_components/, /bld/],
                 loader: ['babel-loader'],
                 query: {
-                    plugins: ['transform-decorators-legacy', 'transform-object-assign','babel-plugin-transform-es2015-literals'],
+                    plugins: ['transform-decorators-legacy', 'transform-object-assign'],
                     presets: ['es2015', 'stage-0']
                 }
             },
@@ -81,7 +81,7 @@ module.exports = {
         // See: https://webpack.github.io/docs/list-of-plugins.html#occurrenceorderplugin
         // See: https://github.com/webpack/docs/wiki/optimization#minimize
         new webpack.optimize.OccurenceOrderPlugin(true),
-        
+
         new webpack.ProvidePlugin({
 
             jQuery: "jquery",
