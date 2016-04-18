@@ -3,6 +3,6 @@ export default class Location {
         this.name = "";
         this.address = "";
         this.coordinates = {};
-        this.category = {};
+        this.category = null;
     }
 }
